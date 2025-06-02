@@ -1,0 +1,23 @@
+{
+  "name": "QuantumCode Development Environment",
+  "image": "mcr.microsoft.com/devcontainers/universal:latest",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "latest"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",        // Python extension
+        "esbenp.prettier-vscode",  // Code formatter
+        "dbaeumer.vscode-eslint"   // JavaScript linter (if using React)
+      ]
+    }
+  },
+  "forwardPorts": [3000, 5000], // Common ports for React (3000) and Flask (5000)
+  "postCreateCommand": "mkdir -p frontend backend && echo '# Frontend' > frontend/README.md && echo '# Backend' > backend/README.md"
+}
